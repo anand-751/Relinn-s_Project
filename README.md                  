@@ -1,0 +1,46 @@
+1. End-to-End System Approach
+
+This project was designed as a modular Retrieval-Augmented Generation (RAG) pipeline to build a console-based chatbot that answers questions strictly from website content.
+
+The system was implemented in four clearly separated stages:
+
+Website Crawling:
+The target website is crawled using a sitemap-based strategy, ensuring deep coverage of nested and non-navigable pages without relying on JavaScript rendering.
+
+Data Preprocessing & Chunking:
+Extracted content is cleaned, normalized, and split into overlapping semantic chunks suitable for vector embeddings.
+
+Semantic Indexing:
+All chunks are converted into embeddings and stored in a FAISS in-memory vector database for fast similarity search.
+
+RAG Chatbot (Console):
+User queries retrieve the most relevant chunks from FAISS and pass them, along with the question, to a Groq-hosted LLaMA 3.1 model to generate grounded answers.
+This modular design makes the system scalable, debuggable, and reproducible, while strictly adhering to the assignment requirement of a console-based chatbot.
+
+2. Technical Decisions & Data Optimization
+
+A major technical challenge was controlling data quality and scale to improve chatbot accuracy.
+Sitemap-Driven URL Extraction
+The website’s sitemap.xml was used to extract all available internal URLs
+This resulted in approximately 3,700 total links
+
+
+Sitemap crawling ensured:
+Full nested coverage
+No reliance on front-end navigation
+Higher recall compared to traditional crawlers
+URL Filtering & Dataset Reduction
+
+
+To optimize the RAG system:
+Blog URLs were excluded to avoid noisy, non-product content
+Only product, feature, integration, and solution pages were retained
+
+
+Dataset Reduction Summary
+Stage	Description	Approx. Count
+Sitemap URLs :	Raw URLs from sitemap	~3,700
+Non-Blog URLs :	After filtering blog pages	~900
+Selected URLs :	Product-focused pages chosen	400
+Scraped Pages :	Successfully crawled pages	400
+Final Chunks :	Semantic chunks for RAG	~5,800
