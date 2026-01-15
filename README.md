@@ -32,7 +32,7 @@ README.md
 
 🔧 **Tech Stack & Design Choices**
 
-LLM: Groq (LLaMA 3.1 – fast inference, low latency)  
+LLM: Groq (llama-3.1-8b-instant – fast inference, low latency)  
 Orchestration: LangChain  
 Vector DB: FAISS (fast, in-memory, CPU-friendly)  
 Scraping: Requests + BeautifulSoup  
