@@ -1,24 +1,3 @@
-# embed_store.py
-"""
-STEP 3: EMBEDDING + VECTOR STORE LAYER (FAISS)
-
-Objective
----------
-- Load preprocessed chunks from JSON (output of preprocess.py)
-- Convert text chunks into vector embeddings
-- Store embeddings in FAISS (in-memory, persisted to disk)
-
-Important Design Choice
------------------------
-Groq (LLaMA 3) is used ONLY for generation.
-For embeddings, we use a fast, local sentence-transformer model.
-This is a standard and interview-accepted RAG architecture.
-
-Run:
-----
-python embed_store.py --input scraped_data/<file>_processed.json
-"""
-
 import argparse
 import json
 import os
