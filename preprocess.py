@@ -1,8 +1,3 @@
-# preprocess.py
-"""
-STEP 2: DATA PREPROCESSING & CHUNKING LAYER
-"""
-
 import argparse
 import json
 import os
