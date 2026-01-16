@@ -1,16 +1,3 @@
-# scraper.py
-"""
-STEP 1: WEBSITE SCRAPER (DATA EXTRACTION LAYER)
-
-Upgraded Version
-----------------
-- Sitemap-based crawling (deep coverage)
-- Blog URLs excluded
-- Product-focused pages only
-- Max 250 pages
-- Broader text extraction
-"""
-
 import argparse
 import json
 import os
