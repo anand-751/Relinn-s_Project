@@ -1,22 +1,3 @@
-# chatbot.py
-"""
-STEP 4: CONSOLE-BASED RAG CHATBOT (FINAL STEP)
-
-Objective
----------
-- Load FAISS vector store created in embed_store.py
-- Accept user queries via console
-- Retrieve relevant chunks using semantic search
-- Generate answers using Groq (LLaMA 3)
-
-This file completes the end-to-end RAG pipeline.
-
-Run:
-----
-export GROQ_API_KEY=your_api_key_here
-python chatbot.py --index vector_store/botpenguin_com_fullsite_20260115_093107
-"""
-
 import argparse
 import os
 
